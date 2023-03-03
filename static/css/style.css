@@ -1,0 +1,511 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Logo */
+.logo {
+  width: 200px;
+}
+/* Container styles */
+.container {
+  display: grid;
+  grid-template-areas: "a b";
+}
+/* side-menu styles */
+@keyframes slideup {
+  from {
+    transform: translateY(60%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.side-menu {
+  grid-area: a;
+  background-color: #dbf9d0;
+}
+.side-menu ul {
+  list-style: none;
+  margin: 0;
+  list-style-type: none;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.side-menu ul li {
+  margin: 30px 0;
+  animation-name: slideup;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.2s;
+  animation-iteration-count: initial;
+  animation-direction: alternate;
+}
+.side-menu ul li a {
+  color: #242424;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+.side-menu ul li a :hover {
+  color: rgb(175, 54, 54);
+}
+.side-menu ul li a :active {
+  color: rgb(175, 54, 54);
+}
+.side-menu ul li a hr {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+/* icon-styles */
+.home-icon {
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.diagnosis-icon {
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.health-centre-icon {
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.emergency-icon {
+  left: 20px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+.info-icon {
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.updates-icon {
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.dark-mode-icon {
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+}
+hr {
+  padding: 0;
+  margin: 0;
+}
+b {
+  padding-left: 40px;
+}
+/* main content styles */
+.home-page {
+  grid-area: b;
+  background-image: linear-gradient(to bottom right, white, #9cbc90);
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+/* Main-page styles */
+h1 {
+  color: #242424;
+  padding-top: 60px;
+  padding-right: 90px;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  animation-name: slideup;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.2s;
+  animation-iteration-count: initial;
+  animation-direction: alternate;
+}
+h2 {
+  color: #242424;
+  padding-top: 60px;
+  padding-right: 90px;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  animation-name: slideup;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.2s;
+  animation-iteration-count: initial;
+  animation-direction: alternate;
+}
+.home-page-text {
+  grid-area: a;
+}
+.home-page-image {
+  grid-area: b;
+  padding-left: 40px;
+  padding-bottom: 16px;
+  border-radius: 20px;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.ai-assistant {
+  width: 400px;
+  height: 400px;
+}
+.home-page-menu {
+  display: grid;
+  grid-template-areas: "a b";
+}
+.input-btn {
+  position: relative;
+  padding: 18px;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(8, 105, 8);
+  color: white;
+  border-radius: 20px;
+  border: none;
+  animation-name: slideup;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.2s;
+  animation-iteration-count: initial;
+  animation-direction: alternate;
+}
+
+input {
+  position: relative;
+  height: 34px;
+  font-size: 16px;
+  flex: 100%;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 0;
+  padding-left: 30px;
+  color: rgba(0, 0, 0, 0.87);
+  word-wrap: break-word;
+  outline: none;
+}
+.output {
+  display: none;
+  min-height: 60px;
+  font-size: 16px;
+  flex: 90%;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 0;
+  padding-left: 30px;
+  color: rgba(0, 0, 0, 0.87);
+  word-wrap: break-word;
+  outline: none;
+}
+.stop-recording {
+  position: absolute;
+  top: 505px;
+  left: 960px;
+  padding-top: 6px;
+  border-radius: 8px;
+}
+.microphone {
+  position: absolute;
+  top: 508px;
+  left: 930px;
+  padding-top: 6px;
+  width: 20px;
+  height: 25px;
+  border-radius: 8px;
+}
+.btn_in {
+  position: absolute;
+  top: 509px;
+  left: 992px;
+  background-color: rgb(8, 105, 8);
+  border: none;
+  border-radius: 10px;
+  width: 50px;
+  height: 25px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+.plus {
+  position: absolute;
+  top: 15px;
+  left: 9px;
+  width: 25px;
+  height: 25px;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  margin: 5px 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Media queries */
+/* to make responsive when size is below 1068px */
+@media screen and (max-width: 1068px) {
+  .container {
+    position: relative;
+    grid-template-areas: "a b";
+  }
+  .home-page {
+    align-items: center;
+    grid-area: b;
+    background-image: linear-gradient(to bottom right, white, #9cbc90);
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .home-page-menu {
+    display: grid;
+    grid-template-areas: "a b";
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+  .input-btn {
+    padding: 12px;
+    font-size: 10px;
+  }
+  .plus {
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    width: 15px;
+    height: 15px;
+  }
+  input {
+    position: relative;
+  }
+  .microphone {
+    position: absolute;
+    top: 555px;
+    left: 890px;
+  }
+  .stop-recording {
+    position: absolute;
+    top: 552px;
+    left: 920px;
+  }
+  .btn_in {
+    position: absolute;
+    top: 560px;
+    left: 960px;
+  }
+}
+/* when device goes less than 767px, changes the side-menu to hamburger*/
+@media screen and (max-width: 767px) {
+  .container {
+    position: relative;
+    grid-template-areas:
+      "a"
+      "b";
+  }
+  .side-menu {
+    height: 120px;
+  }
+  .side-menu ul li {
+    display: none;
+  }
+  .logo {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    top: 20px;
+    left: 40px;
+  }
+  .home-icon {
+    position: absolute;
+    top: 20px;
+    left: 200px;
+  }
+  .home-page {
+    align-items: center;
+  }
+  .home-page-menu {
+    display: grid;
+    grid-template-areas:
+      "a"
+      "b";
+  }
+  h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 40px;
+  }
+  .ai-assistant {
+    width: 500px;
+    height: 500px;
+  }
+  .input-btn {
+    place-content: center;
+    font-size: 30px;
+    height: 90px;
+  }
+  input {
+    position: relative;
+    height: 60px;
+    width: 500px;
+  }
+  .microphone {
+    position: absolute;
+    top: 1410px;
+    width: 30px;
+    height: 30px;
+    left: 400px;
+  }
+  .stop-recording {
+    position: absolute;
+    top: 1405px;
+    left: 430px;
+    width: 40px;
+    height: 40px;
+  }
+  .btn_in {
+    position: absolute;
+    top: 1412px;
+    left: 480px;
+    width: 60px;
+    height: 30px;
+  }
+  .home-page-image {
+    padding-top: 40px;
+    padding-left: 50px;
+  }
+  .ai-assistant {
+    height: 600px;
+    padding-top: 5px;
+  }
+  .plus {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+  }
+}
+/* when device screen is less than 735px */
+@media screen and (max-width: 735px) {
+  .container {
+    position: relative;
+    grid-template-areas:
+      "a"
+      "b";
+  }
+  .side-menu {
+    height: 120px;
+  }
+  .side-menu ul li {
+    display: none;
+  }
+  .logo {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    top: 20px;
+    left: 40px;
+  }
+  .home-icon {
+    position: absolute;
+    top: 20px;
+    left: 200px;
+  }
+  .home-page {
+    align-items: center;
+  }
+  .home-page-menu {
+    display: grid;
+    grid-template-areas:
+      "a"
+      "b";
+  }
+  h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 40px;
+  }
+  .ai-assistant {
+    width: 500px;
+    height: 500px;
+  }
+  .input-btn {
+    place-content: center;
+    font-size: 30px;
+    height: 90px;
+  }
+  input {
+    position: relative;
+    height: 60px;
+    width: 500px;
+  }
+  .microphone {
+    position: absolute;
+    top: 1407px;
+    width: 30px;
+    height: 30px;
+    left: 400px;
+  }
+  .stop-recording {
+    position: absolute;
+    top: 1402px;
+    left: 430px;
+    width: 40px;
+    height: 40px;
+  }
+  .btn_in {
+    position: absolute;
+    top: 1411px;
+    left: 480px;
+    width: 60px;
+    height: 30px;
+  }
+  .home-page-image {
+    padding-top: 40px;
+    padding-left: 50px;
+  }
+  .ai-assistant {
+    height: 600px;
+    padding-top: 5px;
+  }
+  .plus {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WellNexus.com</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--<link rel="stylesheet" href="style.css">-->
+  </head>
+  <body>
+    <div class="container">
+      <form method="GET">
+        <div class="input">
+          <input type="text" class="form-control" id="input" placeholder="Type here...">
+          <button type="submit" class="btn_in"> Submit</button>
+        </div>
+      </form>
+
+      <div class="output" id="output">
+        {% if output %}
+        <p> {{output}}</p>
+        {% endif %}
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = document.querySelector('#input').value;
+        fetch('/symptom-checker?input=' + input)
+        .then(response => response.json())
+        .then(data=> { 
+        const diagnosis = data.response;
+        const output = document.querySelector('#output');
+        output.innerHTML = `<p>${diagnosis}</p>`;
+        });
+        });
+    </script>
+  </body>
+</html>

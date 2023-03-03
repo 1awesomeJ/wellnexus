@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <title>wellnexus</title>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="side-menu">
+                    <img src="{{ url_for('static', filename='AI_app_logo-removebg-preview.png') }}" class="logo">
+                    <ul>
+                        <hr>
+                        <li>
+                            <a href="#">
+                                <b>Home</b>
+                            </a>
+                            <img src="{{ url_for('static', filename='house-black-silhouette-without-door.png') }}" class="home-icon">
+                        </li>
+                        <li>
+                            <a href="#" onclick="alert('Please type in the input bar or use the microphone for audio input')">
+                                <b>Diagnosis/Recommendation</b>
+                            </a>
+                            <img src="{{ url_for('static', filename='diagnosis.png') }}" class="diagnosis-icon">
+                        </li>
+                        <li>
+                            <a href="#" onclick="alert('Feature will be available soon.')">
+                            <b> Add a meal plan to your calendar</b>
+
+                            </a>
+                            <img src="{{ url_for('static', filename='icons8-calendar-50.png') }}" class="health-centre-icon">
+                        </li>
+                        <li>
+                            <a href="#" onclick= "alert('Feature will be available soon.')">
+                                <b>Emergency</b>
+                            </a>
+                            <img src="{{ url_for('static', filename='telephone.png') }}" class="emergency-icon">
+                        </li>
+                        <br>
+                        <br>
+                        <br><br><br><br><br><br>
+                        <hr>
+                        <li>
+                            <a href="#" onclick="alert('Page will be available soon.')">
+                                <b>About</b>
+                            </a>
+                            <img src="{{ url_for('static', filename='info.png') }}" class="info-icon">
+                        </li>
+                        <li>
+                            <a href="#" onclick = "alert('Page will be available soon.')">
+                                <b>Updates and FAQs</b>
+                            </a>
+                            <img src="{{ url_for('static', filename='arrow-up.png') }}" class="updates-icon">
+                        </li>
+                        <li>
+                            <a href="#" onclick= "alert('Feature will bw available soon')">
+                                <b>Dark mode</b>
+                            </a>
+                            <img src="{{ url_for('static', filename='moon.png') }}" class="dark-mode-icon">
+                        </li>
+                    </ul>
+                </div>
+                <div class="home-page">
+                    <section class="home-page-menu">
+                        <div class="home-page-text">
+                            <br><br><br>
+                            <h1>Hi! I'm Nexus,<br>
+                                your personal health assistant.</h1>
+                            <h2>How are you feeling today?</h2>
+                            <br><br>
+                            <button class="input-btn" onclick="getUserInput()">
+                                <img src="{{ url_for('static', filename='icons8-plus-48.png') }}" class="plus">
+                                &nbsp; &nbsp; &nbsp; Add a symptom</button>
+                        </div>
+                        <div class="home-page-image">
+                            <br><br>
+                            <img src="{{ url_for('static', filename='4408-removebg-preview.png') }}" class="ai-assistant">
+                        </div>
+                    </section>
+                    <form class="input-section">
+                        <input type="text" id="input" maxlength="2048" size="80" onkeyup="showOutput()">
+                        &nbsp; &nbsp;
+                        <button id="record-button">
+                            <img src="{{ url_for('static', filename='microphone-black-shape.png') }}" class="microphone">
+                        </button>
+                        <button id="stop-record"><img src="{{ url_for('static', filename='icons8-stop-circled-25.png') }}" class="stop-recording"></button>
+                        <button type="submit" class="btn_in">Send</button>
+                        {% if output %}
+                            <p>
+                                {{output}}</p>
+                        {% endif %}
+                    </form>
+                    <br><br>
+                    <div class="output" id="output1">
+                        {% if output %}
+                            <p>
+                                {{output}}</p>
+                        {% endif %}
+                    </div>
+                            <br><br>
+                    <div class="output" id="output2">
+                        {% if output %}
+                            <p>
+                                {{output}}</p>
+                        {% endif %}
+                    </div>
+                            <br><br>
+                    <div class="output" id="output3">
+                        {% if output %}
+                            <p>
+                                {{output}}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
